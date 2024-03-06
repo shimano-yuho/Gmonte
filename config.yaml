@@ -1,0 +1,50 @@
+seed_value: 42
+
+#Total number of samplings
+n_iteration: 100
+#How often progress is communicated every
+n_alert: 10
+
+#Path of the initial structure
+initial_structure: ./POSCAR_0
+#The format of initial structure. "vasp" for POSCAR, "vasp-out" for OUTCAR, "cif" for cif
+structure_format: vasp
+
+
+#Sum of energies before synthesising the material. For example, for Ti2NbInO8, calculate  2E (TiO2) + 1/2E (Nb2O5) + 1/2E (In2O3) and divide by the total number of atoms. The values can be obtained from first principles calculations or taken from the material project.
+Total_energy_before_synthesis/atom:  -8.827284128690476
+
+#Whether the physical properties of the target are scalar or not.
+target_scalar: True
+
+#Please state if you have previously performed a Gmonte calculation on the same system. If not, set False.
+data_path: False
+
+#If you want to place the inverse temperatures at equal intervals, set to True and note the minimum temperature, maximum temperature and number of temperatures.
+T_Auto: False 
+T_min: 1
+T_max: 100
+n_T: 5
+#If you want to fill in the temperature sets manually, please indicate this in the form of a list.
+T_list: [10, 30, 100]
+
+#If you want to do a replica exchange Monte Carlo method, set True and set the replica exchange interval.
+RE: True
+RE_interval: 5
+
+#Set the atoms to be doped and the atoms to be replaced in the form of a list. Only one type of atom can be substituted.
+atoms_doped: ["Nb", "In"]
+atoms_replaced: ["Ti"]
+
+#Set True if you want to sieve by phonon frequency, band gap value, etc., which are not related to the physical properties of the target. Set the threshold and inequality. For example, if the Threshold is 0 and inequality is >, then a new sampling is performed with those values above 0 being adopted and those below 0 being rejected.  For binary classification, set the threshold between 0 and 1.
+Classification: False
+Threshold: 0
+inequality: ">"
+
+#Set the path of the GNN model for energy prediction, target property prediction and classification model.
+path_ML_energy: ./ML/energy.pt
+path_ML_target: ./ML/target.pt
+path_ML_classification: ./ML/omega.pt
+
+#Set the torch code that describes the graph structure of the created model. The code must be in the form main(atoms).
+graph_path: ./make_graph.py

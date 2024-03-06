@@ -1,2 +1,11 @@
+[project]
+name = "Gmonte"  # ここにプロジェクトの名前を入力
+version = "0.1.0"
+description = "Your project description"
+authors = ["Yuho Shimano <shimano.y.shimano@gmail.com>"]
+
+
+
+
 [project.scripts]
 Gmonte  = "Gmonte.montecarlo:main"

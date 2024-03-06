@@ -251,9 +251,9 @@ def main():
             df.loc[i, "time"] = time.time() - start_time
 
 
-        if (i + 1) % 10 == 0:
+        if (i + 1) % n_alert == 0:
             df.to_csv("montecarlo.csv")
-            json.dump(data,open(f"./data_new.json",'w'))
+            json.dump(data,open(f"./GNN_result.json",'w'))
 
     df.to_csv("montecarlo.csv")
     json.dump(data,open(f"./GNN_result.json",'w'))

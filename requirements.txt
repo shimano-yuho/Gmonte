@@ -2,6 +2,7 @@ ase
 numpy
 pandas
 pymatgen
+PyYAML
 torch
 torch_geometric<=2.2.0
 torch_scatter<=2.1.0

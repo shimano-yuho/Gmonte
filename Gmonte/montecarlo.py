@@ -29,7 +29,7 @@ def main():
     l = ["RE", "time"]
     kb = 8.6171*10**(-5)
     seed_value = g_config["seed_value"]
-    e_f = g_config["Total_energy_before_synthesis/atom"]
+#   e_f = g_config["Total_energy_before_synthesis/atom"]
     iteration = g_config["n_iteration"]
     n_alert = g_config["n_alert"]
     scalar = g_config["target_scalar"]
@@ -185,7 +185,8 @@ def main():
 #               print(f"T = {j}")
 #               print(f"combo = {combos[idx]}")
 
-                energy_dash[idx] = energy_dash[idx] - e_f
+               #energy_dash[idx] = energy_dash[idx] - e_f
+                energy_dash[idx] = energy_dash[idx] 
 
 #               print(f"energy_dash: {energy_dash[idx]}")
 #               print(f"target_dash: {target_dash[idx]}")

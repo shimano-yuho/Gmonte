@@ -10,10 +10,6 @@ initial_structure: ./POSCAR_0
 #The format of initial structure. "vasp" for POSCAR, "vasp-out" for OUTCAR, "cif" for cif
 structure_format: vasp
 
-
-#Sum of energies before synthesising the material. For example, for Ti2NbInO8, calculate  2E (TiO2) + 1/2E (Nb2O5) + 1/2E (In2O3) and divide by the total number of atoms. The values can be obtained from first principles calculations or taken from the material project.
-Total_energy_before_synthesis/atom:  -8.827284128690476
-
 #Whether the physical properties of the target are scalar or not.
 target_scalar: True
 

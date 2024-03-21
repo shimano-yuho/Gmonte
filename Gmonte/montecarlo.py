@@ -16,11 +16,11 @@ import warnings
 #from Gmonte.GNN  import Machine_learning
 #from Gmonte.make_graph  import make_torch
 
-from structure import get_atoms_0, search_data
-from probability  import probability, probability_RE, generate_output
-from GNN  import Machine_learning
-from tool import atoms_2_json_str, make_beta_0
-from config import g_config
+from Gmonte.structure import get_atoms_0, search_data
+from Gmonte.probability  import probability, probability_RE, generate_output
+from Gmonte.GNN  import Machine_learning
+from Gmonte.tool import atoms_2_json_str, make_beta_0
+from Gmonte.config import g_config
 
 
 

@@ -4,8 +4,8 @@ import numpy as np
 import torch
 import importlib.util
 
-from tool import classification
-from config import g_config
+from Gmonte.tool import classification
+from Gmonte.config import g_config
 
 
 def predict(model, data):

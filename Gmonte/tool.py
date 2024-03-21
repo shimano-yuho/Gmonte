@@ -9,7 +9,7 @@ import io
 #from Gmonte.GNN  import Machine_learning
 #from Gmonte.make_graph  import make_torch
 
-from config import g_config
+from Gmonte.config import g_config
 
 def classification(omega):
     TH = g_config["Threshold"]

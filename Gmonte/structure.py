@@ -5,8 +5,8 @@ import ase.io.vasp
 import copy
 import random
 
-from tool import classification
-from config import g_config
+from Gmonte.tool import classification
+from Gmonte.config import g_config
 
 
 def get_atoms_0(structure):

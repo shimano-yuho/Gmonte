@@ -3,7 +3,7 @@
 import numpy as np
 import random
 
-from config import g_config
+from Gmonte.config import g_config
 
 
 def probability(energy, energy_dash, kb, T):

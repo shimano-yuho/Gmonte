@@ -140,8 +140,6 @@ def main():
                         counter += 1
                #        print(target_dash[idx])
 
-
-                
                 for idx, j in enumerate(OKs):
                     d = {}
                     if j == 0:
@@ -153,17 +151,23 @@ def main():
                         except ValueError:
                             d["energy"] = "unstable"
 
-                        try:
-                            d["target"] = target_dash[idx]
-                        except ValueError:
-                            d["target"] = "unstable"
+                        if scalar == True:
+                            try:
+                                d["target"] = target_dash[idx]
+                            except ValueError:
+                                d["target"] = "unstable"
+                        if scalar == False:
+                            try:
+                                d["target"] = str(target_dash[idx])
+                            except ValueError:
+                                d["target"] = "unstable"
 
                         if g_config["Classification"] == True:
                             d["omega"] = omega[idx]
                         data.append(d)
 
                        #print(type(d["target"]))
-                        if type(d["target"]) == np.float64:
+                        if not d["target"] == "unstable":
                             OKs[idx] = 1
 
                 for idx, j in enumerate(OKs):
@@ -192,7 +196,10 @@ def main():
 #               print(f"target_dash: {target_dash[idx]}")
 
                 df.loc[i, f"energy_dash_{j}K"] = energy_dash[idx]
-                df.loc[i, f"target_dash_{j}K"] = target_dash[idx]
+                if scalar == True:
+                    df.loc[i, f"target_dash_{j}K"] = target_dash[idx]
+                elif scalar == False:
+                    df.loc[i, f"target_dash_{j}K"] = str(target_dash[idx])
 
                 if i == 0:
                     ad = True
@@ -241,7 +248,10 @@ def main():
 
         for idx, j in enumerate(l_T):
             df.loc[i, f"energy_{j}K"] = energy[idx]
-            df.loc[i, f"target_{j}K"] = target[idx]
+            if scalar == True:
+                df.loc[i, f"target_{j}K"] = target[idx]
+            elif scalar == False:
+                df.loc[i, f"target_{j}K"] = str(target[idx])
 
             if scalar == True:
                 df.loc[i, f"E_target_{j}K"] = df[f"target_{j}K"].mean()

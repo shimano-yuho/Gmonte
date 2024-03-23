@@ -1,7 +1,7 @@
 seed_value: 42
 
 #Total number of samplings
-n_iteration: 100
+n_iteration: 10
 #How often progress is communicated every
 n_alert: 10
 
@@ -11,10 +11,11 @@ initial_structure: ./POSCAR_0
 structure_format: vasp
 
 #Whether the physical properties of the target are scalar or not.
-target_scalar: True
+target_scalar: False
 
 #Please state if you have previously performed a Gmonte calculation on the same system. If not, set False.
 data_path: False
+data_path: "GNN_result.json"
 
 #If you want to place the inverse temperatures at equal intervals, set to True and note the minimum temperature, maximum temperature and number of temperatures.
 T_Auto: False 
@@ -39,8 +40,9 @@ inequality: ">"
 
 #Set the path of the GNN model for energy prediction, target property prediction and classification model.
 path_ML_energy: ./ML/energy.pt
-path_ML_target: ./ML/target.pt
+path_ML_energy: ./ML/target_t.pt
+path_ML_target: ./ML/target_t.pt
 path_ML_classification: ./ML/omega.pt
 
 #Set the torch code that describes the graph structure of the created model. The code must be in the form main(atoms).
-graph_path: ./make_graph.py
+graph_path: ./make_graph_2.py

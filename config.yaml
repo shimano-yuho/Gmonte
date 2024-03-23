@@ -13,7 +13,7 @@ structure_format: vasp
 #Whether the physical properties of the target are scalar or not.
 target_scalar: False
 
-#Please state if you have previously performed a Gmonte calculation on the same system. If not, set False.
+#Please state JSON file if you have previously performed a Gmonte calculation on the same system. If not, set False.
 data_path: False
 
 #If you want to place the inverse temperatures at equal intervals, set to True and note the minimum temperature, maximum temperature and number of temperatures.
@@ -38,6 +38,7 @@ Threshold: 0
 inequality: ">"
 
 #Set the path of the GNN model for energy prediction, target property prediction and classification model.
+#Energy prediction models should always be scalar outputs.
 path_ML_energy: ./ML/energy.pt
 path_ML_target: ./ML/target.pt
 path_ML_classification: ./ML/omega.pt
